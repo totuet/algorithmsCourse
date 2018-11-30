@@ -106,8 +106,10 @@ public class linkedList<Item extends Comparable<Item>> implements Iterable<Item>
         return item;
     }
 
-    //Write a method remove() that takes a linked list and a string key as arguments
-    //and removes all of the nodes in the list that have key as its item field
+    /*
+    Write a method remove() that takes a linked list and a string key as arguments
+    and removes all of the nodes in the list that have key as its item field
+    */
     public void removeAll(String key) {
         for (int i = 2; i <= size(); i++) {
             if (getNode(i) != null && Objects.equals(getNode(i).item, key)) {
@@ -146,9 +148,11 @@ public class linkedList<Item extends Comparable<Item>> implements Iterable<Item>
         }
     }
 
-//Write a method max() that takes a reference to the first node in a linked list as
-//argument and returns the value of the maximum key in the list. Assume that all keys are
-//positive integers, and return 0 if the list is empty
+    /*
+    Write a method max() that takes a reference to the first node in a linked list as
+    argument and returns the value of the maximum key in the list. Assume that all keys are
+    positive integers, and return 0 if the list is empty
+    */
     public Item max(Node first) {
         Item max = first.item;
         Node x = first;
@@ -193,19 +197,26 @@ public class linkedList<Item extends Comparable<Item>> implements Iterable<Item>
         }
     }
 
+    /*
+    1.3.30 Write a function that takes the first Node in a linked list as argument
+    and (destructively) reverses the list, returning the first Node in the result
+    */
 
+    public Node reverse(Node first) {
+        linkedList<Item> reversedList = new linkedList();
+        
+
+        return reversedList.first;
+    }
 
 
     public static void main(String[] args) {
-
+        System.out.println("start");
         linkedList<Integer> list = new linkedList<>();
         Random rand = new Random();
 
-        for (int i = 0; i < 10 ; i++) {
-            list.add(rand.nextInt(100));
-        }
-
-        list.printList();
+        list.add(3);
+        //list.printList();
 
         System.out.println();
         System.out.println(list.max(list.getNode(1)));

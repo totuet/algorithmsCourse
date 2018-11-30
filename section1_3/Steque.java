@@ -1,9 +1,13 @@
 package section1_3;
 
+/*
+Steque. A stack-ended queue or steque is a data type that supports push, pop, and
+enqueue. Articulate an API for this ADT. Develop a linked-list-based implementation.
+ */
+
 import java.util.Iterator;
 
-public class LinkedListMyImpl<T> implements Iterable<T> {
-
+public class Steque<T> {
     private Node head;
     private Node tail;
     private int size;
@@ -17,7 +21,7 @@ public class LinkedListMyImpl<T> implements Iterable<T> {
 
     public int getSize() {return size;}
 
-    public void addHead(T item) {
+    public void push(T item) {
         Node oldHead = head;
         head = new Node();
         head.item = item;
@@ -27,14 +31,14 @@ public class LinkedListMyImpl<T> implements Iterable<T> {
         size++;
     }
 
-    public T removeHead() {
+    public T pop() {
         T item = head.item;
         head = head.next;
         size--;
         return item;
     }
 
-    public void addTail(T item) {
+    public void enqueue(T item) {
         if (isEmpty()) {
             tail = new Node();
             tail.item = item;
@@ -56,36 +60,6 @@ public class LinkedListMyImpl<T> implements Iterable<T> {
     (destructively) reverses the list, returning the first Node in the result
      */
 
-    public void reverse(Node node1) {
-
-        for (int i = size - 1; i > 0; i--) {
-            Node current = head;
-            Node second = head.next;
-            for (int j = 0; j < i; j++) {
-                T temp = current.item;
-                current.item = second.item;
-                second.item = temp;
-
-                current = second;
-                second = second.next;
-            }
-        }
-
-    } //deze implementatie swapt enkel items, geen nodes.
-
-    public Node reverse2(Node node) {
-        Node first = node;
-        Node reverse = null;
-
-        while (first != null) {
-            Node second = first.next;
-            first.next = reverse;
-            reverse = first;
-            first = second;
-        }
-
-        return reverse;
-    }
 
 
     public Iterator<T> iterator() {
@@ -109,24 +83,4 @@ public class LinkedListMyImpl<T> implements Iterable<T> {
             return item;
         }
     }
-
-    public static void main(String[] args) {
-        LinkedListMyImpl<Integer> list = new LinkedListMyImpl<>();
-
-        for (int i = 1; i < 7; i++) {
-            list.addTail(i);
-        }
-
-        list.forEach(System.out::println);
-        System.out.println();
-        //Node node2 = list.reverse2(list.head);
-        list.forEach(System.out::println);
-
-
-
-
-
-    }
-
-
 }
