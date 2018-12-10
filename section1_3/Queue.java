@@ -22,7 +22,7 @@ public class Queue<Item> implements Iterable<Item>{
         return N;
     }
 
-    public void enqueu (Item item) {
+    public void enqueue (Item item) {
         Node oldlast = last;
         last = new Node();
         last.item = item;
@@ -33,7 +33,7 @@ public class Queue<Item> implements Iterable<Item>{
 
     }
 
-    public Item dequeu() {
+    public Item dequeue() {
         Item item = first.item;
         first = first.next;
         if (isEmpty()) last = null;
