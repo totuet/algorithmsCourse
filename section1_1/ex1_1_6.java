@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 import edu.princeton.cs.algs4.*;
 
 public class ex1_1_6 {

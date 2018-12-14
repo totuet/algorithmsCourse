@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 
 /*
 Random matches. Write a BinarySearch client that takes an int value T as

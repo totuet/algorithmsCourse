@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 
 //Write a recursive static method that computes the value of ln(N!)
 

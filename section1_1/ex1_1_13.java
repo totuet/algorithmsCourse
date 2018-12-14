@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 import java.util.Random;
 
 public class ex1_1_13 {

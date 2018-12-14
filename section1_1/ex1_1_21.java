@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 
 //Write a program that reads in lines from standard input with each
 // line containing a name and two integers and then uses printf()

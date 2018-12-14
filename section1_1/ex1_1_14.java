@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 
 /*
 * y = log2(N)

@@ -1,4 +1,4 @@
-package exercises01_01;
+package section1_1;
 
 /*
 exercise to check whether a random point is on a circle. If it is draw point in different color.
