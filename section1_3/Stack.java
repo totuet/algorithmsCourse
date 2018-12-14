@@ -12,6 +12,27 @@ public class Stack<Item> {
     }
 
 
+    public Stack() {}
+
+    /*
+    1.3.42 Copy a stack. Create a new constructor for the linked-list implementation of
+    Stack so that Stack<Item> t = new Stack<Item>(s);
+    makes t a reference to a new and independent copy of the stack s
+     */
+
+    public Stack(Stack stack) {
+        Stack<Item> temp = new Stack<>();
+        while (!stack.isEmpty()) {
+            temp.push((Item) stack.pop());
+        }
+
+        while (!temp.isEmpty()) {
+            push(temp.pop());
+        }
+
+    }
+
+
     public void push(Item item) {
         Node oldFirst = first;
         first = new Node();
@@ -55,7 +76,7 @@ public class Stack<Item> {
 //            }
 //        }
 //    }
-public void removeLastNode() {
+    public void removeLastNode() {
     if (!isEmpty()) {
         if (N == 1) {
             first = null;
@@ -95,26 +116,15 @@ public void removeLastNode() {
         s.push("fifth");
         s.push("sixth");
         s.push("seventh");
+        System.out.println("oldstack: " + s);
 
-        s.delete(2);
-        while (!s.isEmpty()) {
-            System.out.println(s.pop());
+        Stack<String> newStack = new Stack(s);
+        System.out.println("newstack: " + newStack);
+        while (!newStack.isEmpty()) {
+            System.out.println(newStack.pop());
         }
 
 
     }
-//    public static void main(String[] args)
-//    { // Create a stack and push/pop strings as directed on StdIn.
-//        Stack<String> s = new Stack<String>();
-//        while (true) {
-//
-//            String item = StdIn.readLine();
-//            if (item.equals("0")) break;   //exit program when input is "0"
-//            if (!item.equals("-"))
-//                s.push(item);
-//            else if (!s.isEmpty()) StdOut.print(s.pop() + " ");
-//        }
-//        StdOut.println("(" + s.size() + " left on stack)");
-//    }
 }
 //to be or not to - be - - that - - - is
